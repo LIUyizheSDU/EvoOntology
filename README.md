@@ -4,10 +4,16 @@
 
 <h1 align="center">EvoOntology: A Self-Evolving Ontology Layer for Data Agents</h1>
 
-[![arXiv](https://img.shields.io/badge/arXiv-2609.15779-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2609.15779)
-[![mcp](https://img.shields.io/badge/MCP-compatible-7c3aed.svg)](https://github.com/ruc-datalab/EvoOntology)
-[![mcp](https://img.shields.io/badge/Plug--in-codex-white.svg)](https://github.com/ruc-datalab/EvoOntology/tree/master/plugins/evoontology-codex)
-[![mcp](https://img.shields.io/badge/Plug--in-claude--code-orange.svg)](https://github.com/ruc-datalab/EvoOntology/tree/master/plugins/claude-code) <a href="README.md">English</a> | <a href="README.zh-CN.md">简体中文</a>
+<p align="center">
+  <a href="https://arxiv.org/abs/2609.15779"><img src="https://img.shields.io/badge/arXiv-2609.15779-b31b1b.svg?logo=arXiv" alt="arXiv"></a>
+  <a href="https://github.com/ruc-datalab/EvoOntology"><img src="https://img.shields.io/badge/MCP-compatible-7c3aed.svg" alt="MCP compatible"></a>
+  <a href="https://github.com/ruc-datalab/EvoOntology/tree/master/plugins/evoontology-codex"><img src="https://img.shields.io/badge/Plug--in-codex-white.svg" alt="Codex plugin"></a>
+  <a href="https://github.com/ruc-datalab/EvoOntology/tree/master/plugins/claude-code"><img src="https://img.shields.io/badge/Plug--in-claude--code-orange.svg" alt="Claude Code plugin"></a>
+</p>
+
+<p align="center">
+  <a href="README.md"><strong>English</strong></a> | <a href="README.zh-CN.md">简体中文</a>
+</p>
 
 > **Authors:** [Meiduo Chong](https://github.com/MeiduoChong), [Shaolei Zhang](https://zhangshaolei1998.github.io/)<sup>*</sup>, [Ju Fan](https://iir.ruc.edu.cn/~fanj/), [Xiaoyong Du](https://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/7374b0a3f58045fc9543703ccea2eb9c.htm)<br>
 > Renmin University of China<br>
@@ -15,7 +21,7 @@
 
 EvoOntology bridges the **agent-data gap** over heterogeneous tables, files, and databases. It exposes a versioned **Ontology Layer** through MCP tools, grounds that layer in real workload evidence, and continuously adapts it from execution trajectories.
 
-## Why EvoOntology
+## 🧭 Why EvoOntology
 
 - **Raw data leaves semantics implicit.** Table names, columns, file paths, and isolated observations rarely explain metric definitions, entity relationships, or business constraints. Agents must infer them repeatedly and are prone to semantic errors.
 - **Static semantic layers do not scale with use.** Hand-authored layers require sustained expert maintenance, become stale as data and workloads change, and consume increasing context when injected in full.
@@ -28,32 +34,32 @@ EvoOntology bridges the **agent-data gap** over heterogeneous tables, files, and
 <p align="center"><strong>An agent-first, self-evolving ontology layer for Data Agents.</strong></p>
 
 
-## Demo
+## 🎬 Demo
 
-The plugin for codex and Claude Code, creates and evolves your ontology layers on your data.
+The Codex and Claude Code plugins build and evolve ontology layers over your data.
 
 https://github.com/user-attachments/assets/85b84bd8-0673-4477-9298-dae0e6565b82
 
 
-<p align="center"><strong>An agent-first, self-evolving ontology layer for Data Agents.</strong></p>
+## ✨ Highlights
 
-## Highlights
-
-### Problems We Address
+### 🎯 Problems We Address
 
 - **Semantic uncertainty.** Make domain concepts, data mappings, relationships, and constraints explicit instead of leaving agents to guess from raw sources.
 - **Repeated data exploration.** Reuse grounded knowledge across tasks so agents can focus on relevant data rather than rediscovering the environment for every request.
 - **Costly semantic maintenance.** Adapt the Ontology Layer to changing workloads and agent behavior while keeping updates inspectable, comparable, and reversible.
 
-### Design Highlights
+### 🧩 Design Highlights
 
-- **Active, on-demand access.** Agents retrieve only the semantics relevant to the current step through MCP tools, rather than receiving the entire layer in every prompt.
-- **Evidence-grounded construction.** The initial ontology is built around the workload and verified against the underlying data sources.
-- **Trajectory-grounded evolution.** Historical interactions reveal limitations and guide localized updates across the interconnected Content, Schema, and Tool Layers.
-- **Controlled versioning.** A Candidate is published as the next ontology version only after paired evaluation shows a reproducible improvement over its Parent.
-- **Direct agent integration.** The plugin connects the ontology workspace and MCP runtime to supported agents after installation and session restart.
+| Principle | Core idea |
+| --- | --- |
+| **Active access** | Retrieve only the semantics needed for the current step through MCP tools instead of injecting the full ontology. |
+| **Grounded construction** | Build around the workload and commit semantic objects only after verification against the underlying data. |
+| **Targeted evolution** | Diagnose interaction trajectories and apply localized updates to the interconnected Content, Schema, and Tool Layers. |
+| **Gated versioning** | Publish a Candidate only when paired evaluation shows a reproducible improvement over its Parent. |
+| **Agent integration** | Connect the ontology workspace and MCP runtime directly to supported agents through plugins. |
 
-## How It Works
+## ⚙️ How It Works
 
 EvoOntology treats the Ontology Layer as trainable agent state—not model weights. A builder initializes grounded semantic objects from the workload and underlying data; an evolution agent then uses historical interactions to propose bounded updates and validates every Candidate against its Parent.
 
@@ -61,7 +67,7 @@ EvoOntology treats the Ontology Layer as trainable agent state—not model weigh
   <img src="assets/evoontology-framework.png" alt="EvoOntology builder and evolution framework" width="100%">
 </p>
 
-### The Ontology Layer
+### 🧠 The Ontology Layer
 
 Three interconnected layers define the ontology's knowledge, representation rules, and runtime access:
 
@@ -71,7 +77,27 @@ Three interconnected layers define the ontology's knowledge, representation rule
 | **Schema Layer** | Defines the fields of the four node families, the allowed Semantic Relation types, and the permitted Structural Reference patterns, thereby setting the ontology's representational boundaries. |
 | **Tool Layer** | Exposes the ontology through `browse_semantics`, `resolve_semantics`, and a compact session manifest. The manifest initializes the session; detailed records and linked objects are retrieved on demand. |
 
-### Lifecycle
+<p align="center">
+  <a href="assets/ontology-layers/content-layer.png"><img src="assets/ontology-layers/content-layer.png" alt="Content Layer in the EvoOntology explorer" width="96%"></a><br>
+  <sub><strong>Content Layer:</strong> inspect grounded concepts, mappings, constraints, evidence, and their relationships.</sub>
+</p>
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <a href="assets/ontology-layers/schema-layer.png"><img src="assets/ontology-layers/schema-layer.png" alt="Schema Layer in the EvoOntology explorer" width="100%"></a><br>
+      <sub><strong>Schema Layer:</strong> inspect object types, fields, and controlled relationship rules.</sub>
+    </td>
+    <td width="50%" align="center">
+      <a href="assets/ontology-layers/tool-layer.png"><img src="assets/ontology-layers/tool-layer.png" alt="Tool Layer in the EvoOntology explorer" width="100%"></a><br>
+      <sub><strong>Tool Layer:</strong> inspect MCP tools and the compact runtime manifest.</sub>
+    </td>
+  </tr>
+</table>
+
+<p align="center"><sub>Click any screenshot to open the full-resolution view.</sub></p>
+
+### 🔄 Lifecycle
 
 1. **Build** — derive candidate concepts from the workload, verify them against raw sources, and publish `ontology_v0`.
 2. **Use** — let the Data Agent query the Ontology Layer on demand while its tool interactions and outcomes are recorded.
@@ -79,11 +105,11 @@ Three interconnected layers define the ontology's knowledge, representation rule
 4. **Evaluate** — compare Parent and Candidate with the same data, agent, decoding settings, and interaction budget.
 5. **Publish or reject** — publish the passing Candidate as `ontology_vN+1`; otherwise retain the Parent and use the result in the next round.
 
-## Quick Start
+## 🚀 Quick Start
 
 Install the plugin from the GitHub marketplace—no repository clone, virtual environment, or separate `pip install` is required.
 
-### Claude Code
+### 🤖 Claude Code
 
 ```bash
 claude plugin marketplace add MeiduoChong/EvoOntology
@@ -99,7 +125,7 @@ Start a new session, then run:
 /evo-visualize
 ```
 
-### Codex
+### 🤖 Codex
 
 ```bash
 codex plugin marketplace add MeiduoChong/EvoOntology
@@ -118,7 +144,19 @@ $evo-visualize
 Once built, the Data Agent can call `browse_semantics` and `resolve_semantics` without additional ontology configuration. See the [usage guide](USAGE.md) for the full workflow and data boundaries.
 
 
-## Benchmarks
+## 📊 Performance
+
+Across the four-backbone analysis subset, the builder-constructed **Initial Ontology Layer** improves over **ReAct without an Ontology Layer**, and self-evolution produces a further gain with **EvoOntology** on all three benchmarks.
+
+| Benchmark | Primary metric | ReAct without Ontology Layer | Initial Ontology Layer | EvoOntology | Gain over ReAct |
+| --- | --- | ---: | ---: | ---: | ---: |
+| DDR-Bench (10-K) | Trajectory-Wise | 69.5 | 81.8 | **89.5** | **+20.0** |
+| InsightBench | Insight | 53.2 | 54.0 | **54.2** | **+1.0** |
+| BIRD | Execution Accuracy (EX) | 63.6 | 68.7 | **72.4** | **+8.8** |
+
+<p align="center"><sub>Results use the four-backbone analysis subset in the <a href="https://arxiv.org/abs/2609.15779">paper</a>: GPT-5.5, GPT-5.6-sol, Claude-Sonnet-5, and Claude-Opus-4.8. DDR-Bench values are reported directly in Tables 2 and 8; InsightBench and BIRD values are one-decimal means of the Figure 3 scores and match the stage gains stated in the accompanying analysis. See Tables 1, 3, and 4 for the full six-backbone results and evaluation protocols.</sub></p>
+
+### 🧪 Evaluation Environments
 
 EvoOntology includes self-contained adapters for three complementary Data Agent settings:
 
@@ -130,17 +168,18 @@ EvoOntology includes self-contained adapters for three complementary Data Agent 
 
 Each environment implements an `EvolutionAdapter` and preserves its native rollout and evaluation protocol. List registered environments with `python -m benchmarks list`; see [Adding a benchmark](docs/guide/new-benchmark.md) for the integration contract.
 
-## Repository Layout
+## 🗂️ Repository Layout
 
 | Path | Purpose |
 | --- | --- |
+| [`assets/`](assets/) | README media, framework figures, and ontology-layer interface screenshots. |
 | [`evoontology/`](evoontology/) | Deterministic core: ontology store, runtime/MCP, trajectories, triggers, evaluation, evolution state, validation, and visualization. |
 | [`plugins/`](plugins/) | Self-contained Claude Code and Codex plugins with Build, Evolve, and Visualize skills. |
 | [`benchmarks/`](benchmarks/) | BIRD, DDR-10K, and InsightBench evaluation environments. |
 | [`docs/`](docs/) | Architecture and benchmark-integration documentation. |
 | [`scripts/`](scripts/) | Core-to-plugin synchronization utilities. |
 
-## Documentation
+## 📚 Documentation
 
 - [Usage guide](USAGE.md) — installation, workspace, lifecycle, configuration, and end-to-end operation.
 - [Architecture](docs/architecture.md) — module boundaries, evolution state machine, and evaluation modes.

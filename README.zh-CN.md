@@ -4,23 +4,23 @@
 
 <h1 align="center">EvoOntology：面向 Data Agent 的自进化 Ontology Layer</h1>
 
-> **作者：** [Meiduo Chong](https://github.com/MeiduoChong)<sup>1</sup>、[Shaolei Zhang](https://zhangshaolei1998.github.io/)<sup>1*</sup>、[Ju Fan](https://iir.ruc.edu.cn/~fanj/)<sup>1</sup>、[Xiaoyong Du](https://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/7374b0a3f58045fc9543703ccea2eb9c.htm)<sup>1</sup><br>
-> **机构：** <sup>1</sup> 中国人民大学（Renmin University of China）<br>
-> **联系方式：** zhongmeiduo210@ruc.edu.cn、zhangshaolei98@ruc.edu.cn
-
-<p align="center"><strong>面向 Data Agent 的 Agent-first、自进化 Ontology Layer。</strong></p>
-
-<p align="center"><a href="README.md">English</a> | <a href="README.zh-CN.md">简体中文</a></p>
+<p align="center">
+  <a href="https://arxiv.org/abs/2609.15779"><img src="https://img.shields.io/badge/arXiv-2609.15779-b31b1b.svg?logo=arXiv" alt="arXiv"></a>
+  <a href="https://github.com/ruc-datalab/EvoOntology"><img src="https://img.shields.io/badge/MCP-compatible-7c3aed.svg" alt="MCP compatible"></a>
+  <a href="https://github.com/ruc-datalab/EvoOntology/tree/master/plugins/evoontology-codex"><img src="https://img.shields.io/badge/Plug--in-codex-white.svg" alt="Codex plugin"></a>
+  <a href="https://github.com/ruc-datalab/EvoOntology/tree/master/plugins/claude-code"><img src="https://img.shields.io/badge/Plug--in-claude--code-orange.svg" alt="Claude Code plugin"></a>
+</p>
 
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
-  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10%2B-blue.svg" alt="Python 3.10+"></a>
-  <a href="https://modelcontextprotocol.io/"><img src="https://img.shields.io/badge/MCP-compatible-7c3aed.svg" alt="MCP compatible"></a>
+  <a href="README.md">English</a> | <a href="README.zh-CN.md"><strong>简体中文</strong></a>
 </p>
+
+> **作者：** [Meiduo Chong](https://github.com/MeiduoChong)、[Shaolei Zhang](https://zhangshaolei1998.github.io/)<sup>*</sup>、[Ju Fan](https://iir.ruc.edu.cn/~fanj/)、[Xiaoyong Du](https://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/7374b0a3f58045fc9543703ccea2eb9c.htm)<br>
+> 中国人民大学<br>
 
 EvoOntology 用于弥合异构表格、文件和数据库上的 **agent-data gap**。它通过 MCP 工具提供版本化的 **Ontology Layer**，基于真实 workload 和数据证据完成构建，并根据实际执行轨迹持续适配。
 
-## 为什么需要 EvoOntology
+## 🧭 为什么需要 EvoOntology
 
 - **原始数据缺少显式语义。** 表名、字段、文件路径和零散观测通常无法完整说明指标口径、实体关系与业务约束，Agent 需要反复推断，容易产生语义错误。
 - **静态语义层难以持续扩展。** 人工构建和维护依赖专家投入；数据与 workload 变化后容易过时，完整注入 prompt 的方式也会带来不断增长的上下文开销。
@@ -30,29 +30,33 @@ EvoOntology 用于弥合异构表格、文件和数据库上的 **agent-data gap
   <img src="assets/evoontology-overview.png" alt="使用与不使用 EvoOntology 的 Data Agent 对比" width="92%">
 </p>
 
-## 核心亮点
+<p align="center"><strong>面向 Data Agent 的 Agent-first、自进化 Ontology Layer。</strong></p>
 
-### 我们解决的问题
+## 🎬 Demo
+
+Codex 和 Claude Code 插件可以基于您的数据构建并进化 Ontology Layer。
+
+https://github.com/user-attachments/assets/98ae3e38-73d0-4a1a-9ac4-d140ad09bfbb
+
+## ✨ 核心亮点
+
+### 🎯 我们解决的问题
 
 - **降低语义不确定性。** 显式组织领域概念、数据映射、关系与约束，避免 Agent 仅凭原始数据猜测业务含义。
 - **减少重复的数据探索。** 在任务间复用经过数据验证的知识，使 Agent 能聚焦相关数据，而不必每次重新理解整个环境。
 - **降低语义维护成本。** 根据 workload 和 Agent 行为持续适配 Ontology Layer，同时保证更新可检查、可比较、可回滚。
 
-### 设计亮点
+### 🧩 设计亮点
 
-- **主动、按需访问。** Agent 通过 MCP 工具仅获取当前步骤所需的语义，无需在每次请求中注入完整 Ontology Layer。
-- **基于证据构建。** 初始 ontology 围绕 workload 构建，并通过底层数据源中的实际观测完成验证。
-- **基于轨迹进化。** 从历史交互中识别不足，并在相互关联的 Content、Schema 和 Tool Layer 中进行局部更新。
-- **受控版本演进。** Candidate 只有在配对评估中可复现地优于 Parent，才会发布为下一 ontology 版本。
-- **直接接入 Agent。** 安装插件并重启会话后，即可将 ontology workspace 和 MCP runtime 接入受支持的 Agent。
+| 设计原则 | 核心要点 |
+| --- | --- |
+| **主动访问** | Agent 通过 MCP 工具仅获取当前步骤所需的语义，无需注入完整 Ontology Layer。 |
+| **基于证据构建** | 围绕 workload 构建 ontology，并只提交经过底层数据验证的语义对象。 |
+| **定向进化** | 根据交互轨迹诊断问题，并在相互关联的 Content、Schema 和 Tool Layer 中进行局部更新。 |
+| **门控版本演进** | Candidate 只有在配对评估中可复现地优于 Parent，才会发布为下一版本。 |
+| **Agent 集成** | 通过插件将 ontology workspace 和 MCP runtime 直接接入受支持的 Agent。 |
 
-## Demo
-
-Formula 1 演示展示了同一个 Data Agent 在构建和进化 Ontology Layer 前后的完整过程：baseline 执行、构建 `ontology_v0`、交互式查看、Candidate 评估、版本对比，以及使用优化后 `ontology_v1` 的结果。
-
-https://github.com/user-attachments/assets/98ae3e38-73d0-4a1a-9ac4-d140ad09bfbb
-
-## 工作原理
+## ⚙️ 工作原理
 
 EvoOntology 把 Ontology Layer 视为可训练的 Agent 状态，而不是模型权重。Builder 根据 workload 和底层数据构建有证据支撑的语义对象；Evolution Agent 再利用历史交互提出局部更新，并将每个 Candidate 与 Parent 配对评估。
 
@@ -60,7 +64,7 @@ EvoOntology 把 Ontology Layer 视为可训练的 Agent 状态，而不是模型
   <img src="assets/evoontology-framework.png" alt="EvoOntology 构建与进化框架" width="100%">
 </p>
 
-### Ontology Layer
+### 🧠 Ontology Layer
 
 Ontology Layer 由三个相互关联的层组成，分别定义语义知识、表示规则和运行时访问方式：
 
@@ -70,7 +74,27 @@ Ontology Layer 由三个相互关联的层组成，分别定义语义知识、�
 | **Schema Layer** | 定义四类节点的字段、允许使用的 Semantic Relation 类型，以及合法的 Structural Reference 模式，从而确定 Ontology Layer 的表达边界。 |
 | **Tool Layer** | 通过 `browse_semantics`、`resolve_semantics` 和简洁的 session manifest 向 Agent 暴露 Ontology Layer。会话初始化时只注入 manifest；具体记录及其关联对象均按需检索。 |
 
-### 生命周期
+<p align="center">
+  <a href="assets/ontology-layers/content-layer.png"><img src="assets/ontology-layers/content-layer.png" alt="EvoOntology 可视化界面的 Content Layer" width="96%"></a><br>
+  <sub><strong>Content Layer：</strong>查看已落地的概念、映射、约束、证据及其关系。</sub>
+</p>
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <a href="assets/ontology-layers/schema-layer.png"><img src="assets/ontology-layers/schema-layer.png" alt="EvoOntology 可视化界面的 Schema Layer" width="100%"></a><br>
+      <sub><strong>Schema Layer：</strong>查看对象类型、字段和受控关系规则。</sub>
+    </td>
+    <td width="50%" align="center">
+      <a href="assets/ontology-layers/tool-layer.png"><img src="assets/ontology-layers/tool-layer.png" alt="EvoOntology 可视化界面的 Tool Layer" width="100%"></a><br>
+      <sub><strong>Tool Layer：</strong>查看 MCP 工具和简洁的运行时 manifest。</sub>
+    </td>
+  </tr>
+</table>
+
+<p align="center"><sub>点击任意截图可查看完整分辨率。</sub></p>
+
+### 🔄 生命周期
 
 1. **Build** — 从 workload 提取候选概念，在原始数据源中验证，并发布 `ontology_v0`。
 2. **Use** — Data Agent 按需查询 Ontology Layer，同时记录工具交互和任务结果。
@@ -78,11 +102,11 @@ Ontology Layer 由三个相互关联的层组成，分别定义语义知识、�
 4. **Evaluate** — 在相同数据、Agent、解码配置和交互预算下比较 Parent 与 Candidate。
 5. **Publish or reject** — 通过门控的 Candidate 发布为 `ontology_vN+1`；否则保留 Parent，并把结果用于下一轮。
 
-## 快速开始
+## 🚀 快速开始
 
 直接从 GitHub Marketplace 安装插件，无需 clone 仓库、创建虚拟环境或单独执行 `pip install`。
 
-### Claude Code
+### 🤖 Claude Code
 
 ```bash
 claude plugin marketplace add MeiduoChong/EvoOntology
@@ -98,7 +122,7 @@ claude plugin list
 /evo-visualize
 ```
 
-### Codex
+### 🤖 Codex
 
 ```bash
 codex plugin marketplace add MeiduoChong/EvoOntology
@@ -116,7 +140,7 @@ $evo-visualize
 
 构建完成后，Data Agent 可以直接调用 `browse_semantics` 和 `resolve_semantics`，无需额外配置 Ontology Layer。完整流程和数据边界请见[使用指南](USAGE.md)。
 
-## 使用模式
+## 🔧 使用模式
 
 | 模式 | 适用场景 | 评估边界 |
 | --- | --- | --- |
@@ -125,7 +149,19 @@ $evo-visualize
 
 两种模式共用同一套 `.evoontology/` workspace、`ontology_vN` 版本、checkpoint 和 Parent/Candidate 生命周期。
 
-## 支持的 Benchmark
+## 📊 性能表现
+
+在四个 backbone 的分析子集上，Builder 构建的**初始 Ontology Layer**相比**无 Ontology Layer 的 ReAct**已获得提升；经过自进化后，**EvoOntology** 在三个 benchmark 上均进一步提升。
+
+| Benchmark | 主要指标 | ReAct（无 Ontology Layer） | 初始 Ontology Layer | EvoOntology | 相对 ReAct 提升 |
+| --- | --- | ---: | ---: | ---: | ---: |
+| DDR-Bench（10-K） | Trajectory-Wise | 69.5 | 81.8 | **89.5** | **+20.0** |
+| InsightBench | Insight | 53.2 | 54.0 | **54.2** | **+1.0** |
+| BIRD | Execution Accuracy（EX） | 63.6 | 68.7 | **72.4** | **+8.8** |
+
+<p align="center"><sub>结果采用<a href="https://arxiv.org/abs/2609.15779">论文</a>中的四 backbone 分析子集：GPT-5.5、GPT-5.6-sol、Claude-Sonnet-5 和 Claude-Opus-4.8。DDR-Bench 数值直接取自表 2、8；InsightBench 和 BIRD 数值为图 3 中四个分数的单小数均值，并与正文报告的分阶段提升一致。完整的六 backbone 结果和评估协议见表 1、3、4。</sub></p>
+
+### 🧪 评估环境
 
 EvoOntology 包含三个互补的、自包含的 Data Agent 评估环境：
 
@@ -137,23 +173,24 @@ EvoOntology 包含三个互补的、自包含的 Data Agent 评估环境：
 
 每个环境都实现 `EvolutionAdapter`，并保留原生 rollout 和评估协议。运行 `python -m benchmarks list` 可查看已注册环境；接入新环境请见[新增 Benchmark](docs/guide/new-benchmark.md)。
 
-## 仓库结构
+## 🗂️ 仓库结构
 
 | 路径 | 职责 |
 | --- | --- |
+| [`assets/`](assets/) | README 媒体、框架图和 Ontology Layer 界面截图。 |
 | [`evoontology/`](evoontology/) | 确定性核心：ontology store、runtime/MCP、trajectory、trigger、evaluation、evolution state、validation 和 visualization。 |
 | [`plugins/`](plugins/) | 自包含的 Claude Code 与 Codex 插件，包括 Build、Evolve 和 Visualize skills。 |
 | [`benchmarks/`](benchmarks/) | BIRD、DDR-10K 和 InsightBench 评估环境。 |
 | [`docs/`](docs/) | 架构与 benchmark 接入文档。 |
 | [`scripts/`](scripts/) | 将 core 同步到插件的工具。 |
 
-## 文档
+## 📚 文档
 
 - [使用指南](USAGE.md) — 安装、workspace、生命周期、配置和端到端流程。
 - [架构说明](docs/architecture.md) — 模块边界、进化状态机和评估模式。
 - [新增 Benchmark](docs/guide/new-benchmark.md) — adapter、data loader、rollout、配置和 seed skill 契约。
 - [Claude Code 插件](plugins/claude-code/README.md)与 [Codex 插件](plugins/evoontology-codex/README.md) — 各客户端的安装与使用方式。
 
-## License
+## 📄 License
 
 本项目使用 [MIT License](LICENSE)。Copyright © Meiduo Chong。
