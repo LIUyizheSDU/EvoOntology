@@ -4,7 +4,7 @@
 
 <h1 align="center">EvoOntology: A Self-Evolving Ontology Layer for Data Agents</h1>
 
-[![arXiv](https://img.shields.io/badge/arXiv-2510.16872-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2510.16872)
+[![arXiv](https://img.shields.io/badge/arXiv-2609.15779-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2609.15779)
 [![mcp](https://img.shields.io/badge/MCP-compatible-7c3aed.svg)](https://github.com/ruc-datalab/EvoOntology)
 [![mcp](https://img.shields.io/badge/Plug--in-codex-white.svg)](https://github.com/ruc-datalab/EvoOntology/tree/master/plugins/evoontology-codex)
 [![mcp](https://img.shields.io/badge/Plug--in-claude--code-orange.svg)](https://github.com/ruc-datalab/EvoOntology/tree/master/plugins/claude-code) <a href="README.md">English</a> | <a href="README.zh-CN.md">简体中文</a>
