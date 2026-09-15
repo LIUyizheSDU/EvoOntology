@@ -6,13 +6,11 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2510.16872-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2510.16872)
 [![mcp](https://img.shields.io/badge/MCP-compatible-7c3aed.svg)](https://github.com/ruc-datalab/EvoOntology)
-[![mcp](https://img.shields.io/badge/Plug--in-codex-white.svg)](https://github.com/ruc-datalab/EvoOntology)
-[![mcp](https://img.shields.io/badge/Plug--in-claude--code-orange.svg)](https://github.com/ruc-datalab/EvoOntology)
+[![mcp](https://img.shields.io/badge/Plug--in-codex-white.svg)](https://github.com/ruc-datalab/EvoOntology/tree/master/plugins/evoontology-codex)
+[![mcp](https://img.shields.io/badge/Plug--in-claude--code-orange.svg)](https://github.com/ruc-datalab/EvoOntology/tree/master/plugins/claude-code) <a href="README.md">English</a> | <a href="README.zh-CN.md">简体中文</a>
 
 > **Authors:** [Meiduo Chong](https://github.com/MeiduoChong), [Shaolei Zhang](https://zhangshaolei1998.github.io/)<sup>*</sup>, [Ju Fan](https://iir.ruc.edu.cn/~fanj/), [Xiaoyong Du](https://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/7374b0a3f58045fc9543703ccea2eb9c.htm)<br>
 > Renmin University of China<br>
-
-<p align="center"><a href="README.md">English</a> | <a href="README.zh-CN.md">简体中文</a></p>
 
 
 EvoOntology bridges the **agent-data gap** over heterogeneous tables, files, and databases. It exposes a versioned **Ontology Layer** through MCP tools, grounds that layer in real workload evidence, and continuously adapts it from execution trajectories.
@@ -32,8 +30,9 @@ EvoOntology bridges the **agent-data gap** over heterogeneous tables, files, and
 
 ## Demo
 
-The Formula 1 walkthrough shows the same Data Agent before and after ontology construction and evolution: baseline execution, `ontology_v0` creation, interactive inspection, Candidate evaluation, version comparison, and the refined `ontology_v1` result.
+The plugin for codex and Claude Code, creates and evolves your ontology layers on your data.
 
+<p align="center"><strong>An agent-first, self-evolving ontology layer for Data Agents.</strong></p>
 
 ## Highlights
 
@@ -115,14 +114,6 @@ $evo-visualize
 
 Once built, the Data Agent can call `browse_semantics` and `resolve_semantics` without additional ontology configuration. See the [usage guide](USAGE.md) for the full workflow and data boundaries.
 
-## Usage Modes
-
-| Mode | Best for | Evaluation boundary |
-| --- | --- | --- |
-| `fixed_split` | Benchmarks with a fixed question set and ground truth | Construction data supports Build and diagnosis; the validation reserve is used only by the final gate. |
-| `rolling_trajectory` | Production workloads and cold-start projects without a fixed test set | New trajectories accumulate after each checkpoint; an independent sample or LLM judge gates each Candidate. |
-
-Both modes use the same `.evoontology/` workspace, `ontology_vN` versioning, checkpoints, and Parent/Candidate lifecycle.
 
 ## Benchmarks
 
