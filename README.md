@@ -190,8 +190,16 @@ Each environment implements an `EvolutionAdapter` and preserves its native rollo
 
 If this repository is useful for you, please cite as:
 
-```
-
+```bibtex
+@misc{chong2026evoontologyselfevolvingontologylayer,
+      title={EvoOntology: A Self-Evolving Ontology Layer for Data Agents},
+      author={Meiduo Chong and Shaolei Zhang and Ju Fan and Xiaoyong Du},
+      year={2026},
+      eprint={2609.15779},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2609.15779},
+}
 ```
 
 If you have any questions, please feel free to submit an issue or contact `zhangshaolei98@ruc.edu.cn`.

@@ -191,6 +191,22 @@ EvoOntology 包含三个互补的、自包含的 Data Agent 评估环境：
 - [新增 Benchmark](docs/guide/new-benchmark.md) — adapter、data loader、rollout、配置和 seed skill 契约。
 - [Claude Code 插件](plugins/claude-code/README.md)与 [Codex 插件](plugins/evoontology-codex/README.md) — 各客户端的安装与使用方式。
 
+## 🖋 引用
+
+如果本项目对您有帮助，请引用：
+
+```bibtex
+@misc{chong2026evoontologyselfevolvingontologylayer,
+      title={EvoOntology: A Self-Evolving Ontology Layer for Data Agents},
+      author={Meiduo Chong and Shaolei Zhang and Ju Fan and Xiaoyong Du},
+      year={2026},
+      eprint={2609.15779},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2609.15779},
+}
+```
+
 ## 📄 License
 
 本项目使用 [MIT License](LICENSE)。Copyright © Meiduo Chong。
