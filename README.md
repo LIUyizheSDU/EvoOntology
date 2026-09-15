@@ -32,6 +32,9 @@ EvoOntology bridges the **agent-data gap** over heterogeneous tables, files, and
 
 The plugin for codex and Claude Code, creates and evolves your ontology layers on your data.
 
+https://github.com/user-attachments/assets/85b84bd8-0673-4477-9298-dae0e6565b82
+
+
 <p align="center"><strong>An agent-first, self-evolving ontology layer for Data Agents.</strong></p>
 
 ## Highlights
