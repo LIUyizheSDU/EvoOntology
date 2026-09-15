@@ -1,0 +1,35 @@
+{
+  "name": "evoontology-codex",
+  "version": "1.0.2+codex.20260911071902",
+  "description": "Build, query, record, and evolve a versioned ontology layer for data agents.",
+  "author": {
+    "name": "Meiduo Chong"
+  },
+  "homepage": "https://github.com/MeiduoChong/EvoOntology",
+  "repository": "https://github.com/MeiduoChong/EvoOntology",
+  "license": "MIT",
+  "keywords": [
+    "ontology",
+    "ontology-layer",
+    "data-agent",
+    "self-evolution"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "EvoOntology",
+    "shortDescription": "A self-evolving ontology layer for data agents.",
+    "longDescription": "Build an evidence-grounded ontology layer, use it through bounded MCP tools, record task trajectories, and evolve it behind an evaluation gate.",
+    "developerName": "Meiduo Chong",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Build an initial ontology layer for this data project.",
+      "Check whether the ontology layer is due for evolution.",
+      "Evolve the active ontology layer using recorded trajectories."
+    ]
+  },
+  "mcpServers": "./.mcp.json"
+}
