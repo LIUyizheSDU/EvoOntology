@@ -133,10 +133,13 @@ codex plugin list
 新建 thread 后，让 Codex 使用：
 
 ```text
-$evo-build
-$evo-evolve
-$evo-visualize
+$build-ontology
+$evolve-ontology
+$explore-ontology
 ```
+
+Codex 自动按用户需求、相关项目历史和有依据的探索补足问题，不要求预先准备问题或轨迹文件。构建和进化结束后自动展示结果。SQLite 支持内置只读回放，其他数据源通过宿主工具执行并记录实际观察。详见 [Codex 插件](plugins/evoontology-codex/README.md)。
+
 
 构建完成后，Data Agent 可以直接调用 `browse_semantics` 和 `resolve_semantics`，无需额外配置 Ontology Layer。完整流程和数据边界请见[使用指南](USAGE.md)。
 

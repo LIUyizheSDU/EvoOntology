@@ -136,10 +136,13 @@ codex plugin list
 Start a new thread, then ask Codex to use:
 
 ```text
-$evo-build
-$evo-evolve
-$evo-visualize
+$build-ontology
+$evolve-ontology
+$explore-ontology
 ```
+
+Codex prepares questions from user needs, relevant project history and grounded exploration; question/trajectory files are optional. Build and Evolve automatically open the outcome explorer. SQLite has built-in read-only task replay; other data sources use host tools with explicit observation recording. See [Codex plugin](plugins/evoontology-codex/README.md).
+
 
 Once built, the Data Agent can call `browse_semantics` and `resolve_semantics` without additional ontology configuration. See the [usage guide](USAGE.md) for the full workflow and data boundaries.
 
