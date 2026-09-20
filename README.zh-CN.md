@@ -12,7 +12,17 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/ruc-datalab/EvoOntology/stargazers"><img src="https://img.shields.io/github/stars/ruc-datalab/EvoOntology?style=flat&amp;logo=github&amp;color=3941EA" alt="GitHub stars"></a>
+  <a href="https://github.com/ruc-datalab/EvoOntology/forks"><img src="https://img.shields.io/github/forks/ruc-datalab/EvoOntology?style=flat&amp;logo=github&amp;color=3941EA" alt="GitHub forks"></a>
+  <a href="https://hitscounter.dev/history?url=https%3A%2F%2Fgithub.com%2Fruc-datalab%2FEvoOntology"><img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fruc-datalab%2FEvoOntology&amp;label=Views&amp;icon=graph-up&amp;color=%233941ea&amp;message=&amp;style=flat&amp;tz=Asia%2FShanghai" alt="Page views: today / total"></a>
+</p>
+
+<p align="center">
   <a href="README.md">English</a> | <a href="README.zh-CN.md"><strong>简体中文</strong></a>
+</p>
+
+<p align="center">
+  <a href="#demo">演示视频</a> · <a href="#quick-start">快速开始</a> · <a href="#community">社区分享</a> · <a href="#star-history">Star 趋势</a>
 </p>
 
 > **作者：** [Meiduo Chong](https://github.com/MeiduoChong)、[Shaolei Zhang](https://zhangshaolei1998.github.io/)<sup>*</sup>、[Ju Fan](https://iir.ruc.edu.cn/~fanj/)、[Xiaoyong Du](https://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/7374b0a3f58045fc9543703ccea2eb9c.htm)<br>
@@ -32,11 +42,13 @@ EvoOntology 用于弥合异构表格、文件和数据库上的 **agent-data gap
 
 <p align="center"><strong>面向 Data Agent 的 Agent-first、自进化 Ontology Layer。</strong></p>
 
+<a id="demo"></a>
+
 ## 🎬 Demo
 
 Codex 和 Claude Code 插件可以基于您的数据构建并进化 Ontology Layer。
 
-https://github.com/user-attachments/assets/98ae3e38-73d0-4a1a-9ac4-d140ad09bfbb
+https://github.com/user-attachments/assets/e15f4acd-7161-4ae1-ba41-f2f3ea05488b
 
 ## ✨ 核心亮点
 
@@ -101,6 +113,8 @@ Ontology Layer 由三个相互关联的层组成，分别定义语义知识、�
 3. **Evolve** — 诊断重复出现的行为，将问题归因到 Content、Tool 或 Schema，并生成局部 Candidate 补丁。
 4. **Evaluate** — 在相同数据、Agent、解码配置和交互预算下比较 Parent 与 Candidate。
 5. **Publish or reject** — 通过门控的 Candidate 发布为 `ontology_vN+1`；否则保留 Parent，并把结果用于下一轮。
+
+<a id="quick-start"></a>
 
 ## 🚀 快速开始
 
@@ -193,6 +207,33 @@ EvoOntology 包含三个互补的、自包含的 Data Agent 评估环境：
 - [架构说明](docs/architecture.md) — 模块边界、进化状态机和评估模式。
 - [新增 Benchmark](docs/guide/new-benchmark.md) — adapter、data loader、rollout、配置和 seed skill 契约。
 - [Claude Code 插件](plugins/claude-code/README.md)与 [Codex 插件](plugins/evoontology-codex/README.md) — 各客户端的安装与使用方式。
+
+<a id="community"></a>
+
+## 🌐 社区分享与解读
+
+感谢社区对 EvoOntology 的分享与讨论。
+
+| 来源 | 内容 |
+| --- | --- |
+| [Gorden Sun · X](https://x.com/Gorden_Sun/status/2100846451375141145) | 介绍 EvoOntology 如何帮助数据 Agent 理解业务语义。 |
+| [Bloss0m](https://www.bloss0m.com/paper-reading/50-evoontology-self-evolving-ontology/) | 围绕语义层、MCP 接口与受控进化的独立论文解读。 |
+
+<a id="star-history"></a>
+
+## ⭐ Star 趋势
+
+<p align="center">
+  <a href="https://www.star-history.com/#ruc-datalab/EvoOntology&amp;Date">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ruc-datalab/EvoOntology&amp;type=Date&amp;theme=dark">
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ruc-datalab/EvoOntology&amp;type=Date">
+      <img src="https://api.star-history.com/svg?repos=ruc-datalab/EvoOntology&amp;type=Date" alt="EvoOntology Star History" width="100%">
+    </picture>
+  </a>
+</p>
+
+<sub>Star 与 Fork 统计对应官方仓库 ruc-datalab/EvoOntology。访问徽章显示今日 / 累计图片请求次数（北京时间），从接入后开始累计，受图片缓存影响，不等同于独立访客人数。</sub>
 
 ## 🖋 引用
 
