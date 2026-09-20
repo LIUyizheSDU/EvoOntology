@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <a href="#demo">Demo</a> · <a href="#quick-start">Quick start</a> · <a href="#community">Community</a> · <a href="#star-history">Star history</a>
+  <a href="#-demo">Demo</a> · <a href="#-quick-start">Quick start</a> · <a href="#-community--coverage">Community</a> · <a href="#-star-history">Star history</a>
 </p>
 
 > **Authors:** [Meiduo Chong](https://github.com/MeiduoChong), [Shaolei Zhang](https://zhangshaolei1998.github.io/)<sup>*</sup>, [Ju Fan](https://iir.ruc.edu.cn/~fanj/), [Xiaoyong Du](https://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/7374b0a3f58045fc9543703ccea2eb9c.htm)<br>
@@ -43,8 +43,6 @@ EvoOntology bridges the **agent-data gap** over heterogeneous tables, files, and
 
 <p align="center"><strong>An agent-first, self-evolving ontology layer for Data Agents.</strong></p>
 
-
-<a id="demo"></a>
 
 ## 🎬 Demo
 
@@ -116,8 +114,6 @@ Three interconnected layers define the ontology's knowledge, representation rule
 3. **Evolve** — diagnose recurring behavior, attribute it to Content, Tool, or Schema, and produce a localized Candidate patch.
 4. **Evaluate** — compare Parent and Candidate with the same data, agent, decoding settings, and interaction budget.
 5. **Publish or reject** — publish the passing Candidate as `ontology_vN+1`; otherwise retain the Parent and use the result in the next round.
-
-<a id="quick-start"></a>
 
 ## 🚀 Quick Start
 
@@ -203,8 +199,6 @@ Each environment implements an `EvolutionAdapter` and preserves its native rollo
 - [Add a benchmark](docs/guide/new-benchmark.md) — adapter, data loader, rollout, configuration, and seed-skill contract.
 - [Claude Code plugin](plugins/claude-code/README.md) and [Codex plugin](plugins/evoontology-codex/README.md) — client-specific installation and usage.
 
-<a id="community"></a>
-
 ## 🌐 Community & Coverage
 
 Thank you to the community for sharing and discussing EvoOntology.
@@ -213,8 +207,6 @@ Thank you to the community for sharing and discussing EvoOntology.
 | --- | --- |
 | [Gorden Sun · X](https://x.com/Gorden_Sun/status/2100846451375141145) | An introduction to how EvoOntology helps data agents understand business semantics. |
 | [Bloss0m](https://www.bloss0m.com/paper-reading/50-evoontology-self-evolving-ontology/) | An independent paper walkthrough of the semantic layer, MCP interface and controlled evolution. |
-
-<a id="star-history"></a>
 
 ## ⭐ Star History
 

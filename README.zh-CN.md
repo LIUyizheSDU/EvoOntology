@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <a href="#demo">演示视频</a> · <a href="#quick-start">快速开始</a> · <a href="#community">社区分享</a> · <a href="#star-history">Star 趋势</a>
+  <a href="#-demo">演示视频</a> · <a href="#-快速开始">快速开始</a> · <a href="#-社区分享与解读">社区分享</a> · <a href="#-star-趋势">Star 趋势</a>
 </p>
 
 > **作者：** [Meiduo Chong](https://github.com/MeiduoChong)、[Shaolei Zhang](https://zhangshaolei1998.github.io/)<sup>*</sup>、[Ju Fan](https://iir.ruc.edu.cn/~fanj/)、[Xiaoyong Du](https://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/7374b0a3f58045fc9543703ccea2eb9c.htm)<br>
@@ -41,8 +41,6 @@ EvoOntology 用于弥合异构表格、文件和数据库上的 **agent-data gap
 </p>
 
 <p align="center"><strong>面向 Data Agent 的 Agent-first、自进化 Ontology Layer。</strong></p>
-
-<a id="demo"></a>
 
 ## 🎬 Demo
 
@@ -113,8 +111,6 @@ Ontology Layer 由三个相互关联的层组成，分别定义语义知识、�
 3. **Evolve** — 诊断重复出现的行为，将问题归因到 Content、Tool 或 Schema，并生成局部 Candidate 补丁。
 4. **Evaluate** — 在相同数据、Agent、解码配置和交互预算下比较 Parent 与 Candidate。
 5. **Publish or reject** — 通过门控的 Candidate 发布为 `ontology_vN+1`；否则保留 Parent，并把结果用于下一轮。
-
-<a id="quick-start"></a>
 
 ## 🚀 快速开始
 
@@ -208,8 +204,6 @@ EvoOntology 包含三个互补的、自包含的 Data Agent 评估环境：
 - [新增 Benchmark](docs/guide/new-benchmark.md) — adapter、data loader、rollout、配置和 seed skill 契约。
 - [Claude Code 插件](plugins/claude-code/README.md)与 [Codex 插件](plugins/evoontology-codex/README.md) — 各客户端的安装与使用方式。
 
-<a id="community"></a>
-
 ## 🌐 社区分享与解读
 
 感谢社区对 EvoOntology 的分享与讨论。
@@ -218,8 +212,6 @@ EvoOntology 包含三个互补的、自包含的 Data Agent 评估环境：
 | --- | --- |
 | [Gorden Sun · X](https://x.com/Gorden_Sun/status/2100846451375141145) | 介绍 EvoOntology 如何帮助数据 Agent 理解业务语义。 |
 | [Bloss0m](https://www.bloss0m.com/paper-reading/50-evoontology-self-evolving-ontology/) | 围绕语义层、MCP 接口与受控进化的独立论文解读。 |
-
-<a id="star-history"></a>
 
 ## ⭐ Star 趋势
 
