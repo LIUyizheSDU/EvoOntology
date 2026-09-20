@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <a href="#-demo">Demo</a> · <a href="#-quick-start">Quick start</a> · <a href="#-community--coverage">Community</a> · <a href="#-star-history">Star history</a>
+  <a href="#user-content--demo">Demo</a> · <a href="#user-content--quick-start">Quick start</a> · <a href="#user-content--community--coverage">Community</a> · <a href="#user-content--star-history">Star history</a>
 </p>
 
 > **Authors:** [Meiduo Chong](https://github.com/MeiduoChong), [Shaolei Zhang](https://zhangshaolei1998.github.io/)<sup>*</sup>, [Ju Fan](https://iir.ruc.edu.cn/~fanj/), [Xiaoyong Du](https://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/7374b0a3f58045fc9543703ccea2eb9c.htm)<br>

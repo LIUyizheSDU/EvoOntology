@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <a href="#-demo">演示视频</a> · <a href="#-快速开始">快速开始</a> · <a href="#-社区分享与解读">社区分享</a> · <a href="#-star-趋势">Star 趋势</a>
+  <a href="#user-content--demo">演示视频</a> · <a href="#user-content--快速开始">快速开始</a> · <a href="#user-content--社区分享与解读">社区分享</a> · <a href="#user-content--star-趋势">Star 趋势</a>
 </p>
 
 > **作者：** [Meiduo Chong](https://github.com/MeiduoChong)、[Shaolei Zhang](https://zhangshaolei1998.github.io/)<sup>*</sup>、[Ju Fan](https://iir.ruc.edu.cn/~fanj/)、[Xiaoyong Du](https://info.ruc.edu.cn/jsky/szdw/ajxjgcx/jsjkxyjsx1/js2/7374b0a3f58045fc9543703ccea2eb9c.htm)<br>
